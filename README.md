@@ -9,7 +9,8 @@ running the simulator, network setup, and more.
 
 This work corresponds to the paper titled "Design and realization of a 
 benchmarking testbed for evaluating autonomous platooning algorithms" which 
-was accepted to ISER 2023.
+was accepted to ISER 2023. The paper can be found 
+[here](https://michael-shaham.github.io/papers/platoon_testbed.html).
 
 Some of the code/info might be slightly disorganized, but please reach out 
 if you have any issues with anything in this code base.
