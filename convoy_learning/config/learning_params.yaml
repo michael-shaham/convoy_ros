@@ -1,0 +1,11 @@
+/**:
+  ros__parameters:
+    reset_distance: 45
+    prev_distance_length: 9
+    prev_speed_length: 5
+    model_file: long_trail
+    min_desired_distance: 1.0
+    max_desired_distance: 3.0
+    noise_range: 0.04
+    learning_rate: 0.0001
+    layer_sizes: [64, 64]

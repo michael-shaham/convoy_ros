@@ -1,0 +1,6 @@
+/**:
+  ros__parameters:
+    controller: 'bicycle_mpc'
+    poly_deg: 2
+    trajectory_length: 1000
+    planning_horizon: 10

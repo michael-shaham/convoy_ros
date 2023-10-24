@@ -1,0 +1,6 @@
+/**:
+  ros__parameters:
+    controller: 'double_integrator'
+    poly_deg: 2
+    trajectory_length: 1000
+    planning_horizon: 10

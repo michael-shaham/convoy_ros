@@ -1,0 +1,7 @@
+**/.vscode
+**/.ipynb_checkpoints
+**/gurobi.log
+**/__pycache__
+**/.DS_Store
+**/compile_commands.json
+**/.cache

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>convoy_control</name>
+  <version>0.0.0</version>
+  <description>Control modules for the convoy vehicles</description>
+  <maintainer email="michael.h.shaham@gmail.com">Michael Shaham</maintainer>
+  <license>TODO: License declaration</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>rclpy</depend>
+  <depend>ackermann_msgs</depend>
+  <depend>convoy_interfaces</depend>
+  <depend>nav_msgs</depend>
+
+  <buildtool_depend>eigen3_cmake_module</buildtool_depend>
+  <build_depend>eigen</build_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
