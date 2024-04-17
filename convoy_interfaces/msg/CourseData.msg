@@ -1,0 +1,6 @@
+std_msgs/Header header
+sensor_msgs/PointCloud2 left_wall
+sensor_msgs/PointCloud2 right_wall
+float64 track_width
+float64 left_wall_dist
+float64 right_wall_dist

@@ -1,0 +1,8 @@
+std_msgs/Header header
+float64 desired_distance
+float64 predecessor_distance
+float64 distance_error
+float64 ego_speed
+float64 predecessor_speed 
+float64 speed_error 
+float64 opt_input

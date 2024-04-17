@@ -1,0 +1,158 @@
+/**:
+  ros__parameters:
+
+    # topics and frames
+    safe_drive_topic: "safe_drive"
+    real_drive_topic: "drive"
+    emergency_brake_topic: "emergency_brake"
+    odom_topic: "odom"
+    scan_topic: "scan"
+    processed_scan_topic: "scan"
+    course_data_topic: "course_data"
+    left_wall_pc_topic: "left_wall_pc"
+    right_wall_pc_topic: "right_wall_pc"
+    neighbor_info_topic: "neighbor_info"
+    veh_frame: "base_link"
+    lidar_frame: "laser"
+    lateral_control_topic: "lateral_control"
+    longitudinal_control_topic: "longitudinal_control"
+    desired_distance_topic: "desired_distance"
+    convoy_control_data_topic: "convoy_control_data"
+    shared_long_traj_topic: "shared_traj"
+    virtual_leader_traj_topic: "/virtual_leader_traj"
+    virtual_leader_frame: "virtual_link"
+    safe_speed_topic: "safe_speed"
+
+    # vehicle parameters/constraints
+    base_lidar_distance: 0.0  # m
+    wheelbase: .324           # m
+    speed_min: -0.5           # m/s
+    speed_max: 8.0            # m/s
+    accel_min: -5.0           # m/s^2
+    accel_max: 5.0            # m/s^2
+    steer_min: -0.36          # rad
+    steer_max: 0.36           # rad
+    steer_v_min: -3.14        # rad/s
+    steer_v_max: 3.14         # rad/s
+    dt: 0.1                   # discretization time
+    tau: 0.3                  # accel delay time; tau = dt -> one timestep delay
+    desired_distance: 1.5     # m
+
+    # data logging
+    learn_samples_cut: 10000
+    
+    ########## convoy_safety ########## 
+
+    # calculate_safe_speed
+    min_trajectory_length: 2.0
+    max_trajectory_length: 10.0
+    min_safe_speed: 2.0
+    max_safe_speed: 6.0
+ 
+    ########## convoy_planning ########## 
+
+    planner_trajectory_topic: 'planner_trajectory'
+    planner_trajectory_vis_topic: 'planner_trajectory_vis'
+
+    ########## convoy_perception ########## 
+
+    # preprocess_lidar
+    fov_deg: 270.0
+
+    # course_walls_seg
+    track_width: 2.5
+    lidar_range_threshold: 15.0  # in meters
+    dbscan_eps: .3
+    dbscan_min_samples: 5
+    min_cluster_size: 30
+    neighbor_ball_radius: 0.6
+
+    ########## convoy_control ########## 
+
+    # drive_controller
+    max_safe_speed_deviation: 0.5
+
+    # virtual leader reference trajectory params
+    leader_trajectory_type: 'stagger'
+    stop_time: 30.0
+    wait_time: 2.0
+    brake_decel: -1.0
+    zero_speed_percentage: 0.0
+    stagger_time_min: 20.0
+    stagger_time_max: 20.0
+    sinusoid_period_min: 20.0
+    sinusoid_period_max: 20.0
+    low_speed_min: 2.0
+    low_speed_max: 2.0 
+    high_speed_min: 3.5
+    high_speed_max: 3.5
+    reference_accel_min: 0.5
+    reference_accel_max: 3.0
+    
+    ## longitudinal control ##
+
+    # constant_input
+    constant_speed: 5.0
+    constant_accel: 0.0
+
+    # double_int_mpc
+    Q_double_int_weight: 10.0
+    R_double_int_weight: 1.0
+
+    # linear_feedback
+    relative_position_gain_accel: 1.0
+    relative_speed_gain_accel: 2.0
+    relative_position_gain_vel: 1.0
+    relative_speed_gain_vel: 2.0
+
+    # nn feedback
+    encode_platoon_position: True
+    max_vehicles: 5
+    model_file: 'vel_dyn_ctrl_pf_leaky_relu'
+    leaky_relu_slope: 0.1
+    hidden_layer_sizes: [8, 8]
+    nn_bias: True
+    
+    # DMPC
+    horizon: 70
+
+    # general dmpc
+    time_headway: 0.2
+    output_norm: 'l1'
+    q_dmpc: 1.
+    r_dmpc: 1.
+
+    # quad_pfmpc
+    q_self_quad_position: 1.
+    q_self_quad_speed: 1.
+    q_pred_quad_position: 1.
+    q_pred_quad_speed: 1.
+    r_quad: .1
+
+    # l1_pfmpc
+    W_l1: [1., 1.]
+    q_self_l1: 1.
+    q_pred_l1: 1.
+    r_l1: .1
+
+    # linear_mpc
+    q_mpc: 10.
+    q_f_mpc: 1.
+    r_mpc: 0.1 
+
+    ## lateral control ##
+
+    # pure_pursuit
+    lookahead_speed_gain: 0.5
+    min_lookahead: 0.5
+    max_lookahead: 3.0
+
+    # stanley
+    crosstrack_error_gain: 0.5
+    softness_gain: 1.0
+
+    ## bicycle model ##
+
+    # bicycle_mpc
+    Q_bicycle_weight: 1.0
+    R_bicycle_weight: 2.0

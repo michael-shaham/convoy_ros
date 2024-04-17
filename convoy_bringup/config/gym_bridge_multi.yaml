@@ -1,0 +1,30 @@
+/**:
+  ros__parameters:
+
+    # vehicle(s) info
+    namespace: 'veh_'
+    n_vehicles: 4
+    vehicle_frame: 'base_link'
+    lidar_frame: 'laser'
+    scan_topic: 'scan'
+    odom_topic: 'odom'
+    drive_topic: 'drive'
+
+    # lidar parameters
+    scan_distance_to_base_link: 0.0
+    scan_fov: 4.7
+    scan_beams: 1080
+    range_min: 0.1
+    range_max: 30.
+
+    # map parameters
+    map_name: 'IMS_map'
+    map_img_ext: '.png'
+
+    # vehicle starting poses
+    x_arr: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    y_arr: [0.0, -1.5, -3.0, -4.5, -6.0, -7.5, -9.0]
+    theta_arr: [1.57, 1.57, 1.57, 1.57, 1.57, 1.57, 1.57]
+
+    # teleop
+    kb_teleop: True

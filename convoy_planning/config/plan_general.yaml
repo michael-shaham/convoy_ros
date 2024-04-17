@@ -1,0 +1,5 @@
+/**:
+  ros__parameters:
+    poly_deg: 3
+    trajectory_length: 100
+    planning_horizon: 10  # only used for some controllers

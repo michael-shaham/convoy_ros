@@ -1,0 +1,5 @@
+/**:
+  ros__parameters:
+    device_id: "0x0004"
+    pozyx_range_topic: "ranges"
+    pozyx_rate_hz: 5
